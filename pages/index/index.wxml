@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="content" wx:for="{{allData}}" wx:for-item="item" wx:key="index"> -->
+    <view class='question'>
+      <view class='questiontitle'>问题{{questionid+1}}</view>
+      <view>{{allData[questionid].question}}</view>
+    </view>
+    <view class="answer">
+      <view wx:for="{{allData[questionid].answer}}" wx:for-item="ansitem" wx:key="ansindex">
+        <view>* {{ansitem}}</view>
+      </view>
+    </view>
+  <!-- </view>   -->
+  <view class="scrollpage">
+    <button size="mini" type="default" bindtap="pre" disabled="{{questionid==0}}">上一题</button>
+    <button size="mini" type="default" bindtap="next" disabled="{{questionid==allData.length-1}}">下一题</button>
+  </view>
+</view>
+
